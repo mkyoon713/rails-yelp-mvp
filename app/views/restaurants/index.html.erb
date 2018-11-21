@@ -1,0 +1,18 @@
+<div id="blue-wrapper">
+<h1>Welcome to Yelp!</h1>
+<p>Your #1 restaurant advisor.</p>
+</div>
+<div class="container">
+<h2>Restaurant listings</h2>
+<% @restaurants.each do |restaurant| %>
+<p>
+  <%= link_to restaurant.name, restaurant_path(restaurant) %>
+  <%= "(#{restaurant.reviews.count} reviews)" %>
+</p>
+<ul>
+  <li><strong>Address: </strong><%= restaurant.address %></li>
+  <li><strong>Phone number: </strong><%= restaurant.phone_number %></li>
+  <li><strong>Category: </strong><%= restaurant.category %></li>
+</ul>
+<% end %>
+</div>
